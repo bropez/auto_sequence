@@ -13,12 +13,17 @@ function get_clip(my_name, my_array) {
 }
 
 var activeSeq = app.project.activeSequence;
+
+// "spacer clip", change this name if you'd like
 var color_bars = get_clip("color_bars.mp4", app.project.rootItem.children);
 var track = activeSeq.videoTracks[1];
 var cb_track = activeSeq.videoTracks[2];
 
+// outer loop
 // looping through the project panel minus an added sequence and "color_bars.mp4"
 for (i = 1; i < app.project.rootItem.children.numItems - 2; i++) {
+    
+    // sequential clip names, change this if you'd like
     var current_name = "comment" + i + ".mp4";
     var clip = get_clip(current_name, app.project.rootItem.children);
     
